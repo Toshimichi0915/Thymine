@@ -27,7 +27,7 @@ public class CameraMixin {
     public void updateEyeHeight() {
         if (this.focusedEntity != null) {
             lastCameraY = cameraY;
-            if (focusedEntity.isSneaking())
+            if (focusedEntity.isInSneakingPose())
                 cameraY = 1.27F;
             else if (focusedEntity.isInSwimmingPose())
                 cameraY = 0.4F;
