@@ -7,7 +7,8 @@
   ],
   "client": [
     "SliderWidgetMixin",
-    "CameraMixin"
+    "CameraMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
