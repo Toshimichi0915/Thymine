@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "modid",
+  "version": "${version}",
+  "name": "giz5",
+  "description": "giz5 fixes small bugs and improve your combat experience",
+  "authors": [
+    "hp20"
+  ],
+  "contact": {
+    "homepage": "https://hp20.me/"
+  },
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "me.hp20.giz5.Giz5Mod"
+    ]
+  },
+  "mixins": [
+    "giz5.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  },
+  "suggests": {
+    "flamingo": "*"
+  }
+}

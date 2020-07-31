@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.hp20.giz5.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "SliderWidgetMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
