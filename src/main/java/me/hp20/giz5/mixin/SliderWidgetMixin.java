@@ -26,7 +26,7 @@ public class SliderWidgetMixin extends AbstractButtonWidget {
 
     /**
      * @author hp20
-     * @reason fixes buttons ringing sound even when they were not clicked
+     * @reason Fixes buttons ringing sound even when they were not clicked
      */
     @Overwrite
     public void onRelease(double mouseX, double mouseY) {

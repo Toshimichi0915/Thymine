@@ -6,7 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "SliderWidgetMixin"
+    "SliderWidgetMixin",
+    "CameraMixin"
   ],
   "injectors": {
     "defaultRequire": 1
