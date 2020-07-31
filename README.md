@@ -6,3 +6,6 @@ giz5 fixes small bugs and improve your combat experience
 
 ### Fixed bugs
 1. Fixed [MC-145748](https://bugs.mojang.com/browse/MC-145748)
+
+### License
+This code is under LGPL v3 license
