@@ -15,8 +15,8 @@ public class ToggleSprintHud extends DrawableHelper {
         client.getProfiler().push("toggleSprint");
         RenderSystem.pushMatrix();
 
-        int x = Giz5Mod.getOptions().toggleSprintHud.getX();
-        int y = Giz5Mod.getOptions().toggleSprintHud.getY();
+        float x = Giz5Mod.getOptions().toggleSprintHud.getX();
+        float y = Giz5Mod.getOptions().toggleSprintHud.getY();
         int color = Giz5Mod.getOptions().toggleSprintHud.color;
         if (Giz5Mod.getOptions().sprint) {
             String toggleSprintEnabled = new TranslatableText("giz5.messages.toggleSprint.enabled").getString();

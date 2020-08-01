@@ -16,7 +16,7 @@ public class Giz5Options {
         sprint = false;
         toggleSprintHud = new ToggleSprintOptions();
         toggleSprintHud.x = -200;
-        toggleSprintHud.y = -10;
+        toggleSprintHud.y = -15;
         toggleSprintHud.position = Position.CENTER_BOTTOM;
         toggleSprintHud.color = 0xE0E0E0;
     }
