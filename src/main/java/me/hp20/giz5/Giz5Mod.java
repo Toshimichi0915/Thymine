@@ -19,7 +19,7 @@ public class Giz5Mod implements ModInitializer {
     private static Giz5Options options;
     private static KeyBinding sprintKeyBinding;
 
-    private static final File configFile = new File("giz5.json");
+    private static final File configFile = new File("config/giz5.json");
     private static final Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
     @Override
