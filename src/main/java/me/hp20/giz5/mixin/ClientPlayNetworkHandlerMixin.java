@@ -29,10 +29,9 @@ public abstract class ClientPlayNetworkHandlerMixin implements ClientPlayPacketL
         if (Giz5Mod.getOptions().shiftFix) {
             NetworkThreadUtils.forceMainThread(packet, this, client);
             Entity entity = this.world.getEntityById(packet.id());
-            if (entity != null && entity.equals(client.player))
-                packet.getTrackedValues().removeIf(p -> p.getData().getType().equals(TrackedDataHandlerRegistry.ENTITY_POSE));
-
             if (entity != null && packet.getTrackedValues() != null) {
+                if (entity.equals(client.player))
+                    packet.getTrackedValues().removeIf(p -> p.getData().getType().equals(TrackedDataHandlerRegistry.ENTITY_POSE));
                 entity.getDataTracker().writeUpdatedEntries(packet.getTrackedValues());
             }
             info.cancel();
