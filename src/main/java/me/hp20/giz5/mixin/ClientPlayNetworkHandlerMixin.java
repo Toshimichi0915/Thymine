@@ -1,5 +1,6 @@
 package me.hp20.giz5.mixin;
 
+import me.hp20.giz5.Giz5Mod;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.world.ClientWorld;
@@ -9,8 +10,10 @@ import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.EntityTrackerUpdateS2CPacket;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(ClientPlayNetworkHandler.class)
 public abstract class ClientPlayNetworkHandlerMixin implements ClientPlayPacketListener {
@@ -21,20 +24,18 @@ public abstract class ClientPlayNetworkHandlerMixin implements ClientPlayPacketL
     @Shadow
     private MinecraftClient client;
 
-    /**
-     * @author hp20
-     * @reason discords pose related packets of the player sent by a server
-     */
-    @Overwrite
-    public void onEntityTrackerUpdate(EntityTrackerUpdateS2CPacket packet) {
-        NetworkThreadUtils.forceMainThread(packet, this, client);
-        Entity entity = this.world.getEntityById(packet.id());
-        if (entity != null && entity.equals(client.player))
-            packet.getTrackedValues().removeIf(p -> p.getData().getType().equals(TrackedDataHandlerRegistry.ENTITY_POSE));
+    @Inject(at = @At("HEAD"), method = "onEntityTrackerUpdate(Lnet/minecraft/network/packet/s2c/play/EntityTrackerUpdateS2CPacket;)V", cancellable = true)
+    public void onEntityTrackerUpdate(EntityTrackerUpdateS2CPacket packet, CallbackInfo info) {
+        if (Giz5Mod.getOptions().shiftFix) {
+            NetworkThreadUtils.forceMainThread(packet, this, client);
+            Entity entity = this.world.getEntityById(packet.id());
+            if (entity != null && entity.equals(client.player))
+                packet.getTrackedValues().removeIf(p -> p.getData().getType().equals(TrackedDataHandlerRegistry.ENTITY_POSE));
 
-        if (entity != null && packet.getTrackedValues() != null) {
-            entity.getDataTracker().writeUpdatedEntries(packet.getTrackedValues());
+            if (entity != null && packet.getTrackedValues() != null) {
+                entity.getDataTracker().writeUpdatedEntries(packet.getTrackedValues());
+            }
+            info.cancel();
         }
-
     }
 }
