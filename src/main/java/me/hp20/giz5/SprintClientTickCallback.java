@@ -15,11 +15,12 @@ public class SprintClientTickCallback implements ClientTickCallback {
             boolean pressed = Giz5Mod.getSprintKeyBinding().isPressed();
             if (pressed && !lastPressed) {
                 opt.sprint = !opt.sprint;
-                client.options.keySprint.setPressed(opt.sprint);
             }
             lastPressed = pressed;
         } else {
             opt.sprint = false;
         }
+
+        client.options.keySprint.setPressed(opt.sprint);
     }
 }
