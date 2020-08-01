@@ -4,5 +4,6 @@
   "giz5.options.fastSneak": "FastSneak",
   "giz5.options.shiftFix": "ShiftFix",
   "giz5.options.toggleSprint": "ToggleSprint",
-  "giz5.options.sprint": "Sprint"
+  "giz5.messages.toggleSprint.enabled": "ToggleSprint Enabled",
+  "giz5.messages.toggleSprint.disabled": "ToggleSprint Disabled"
 }

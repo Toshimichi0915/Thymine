@@ -1,5 +1,6 @@
 package me.hp20.giz5;
 
+import me.hp20.giz5.options.Giz5Options;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ScreenTexts;
 import net.minecraft.client.gui.screen.options.GameOptionsScreen;

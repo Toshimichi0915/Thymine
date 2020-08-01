@@ -10,7 +10,9 @@
     "CameraMixin",
     "LivingEntityMixin",
     "OptionsScreenMixin",
-    "ClientPlayNetworkHandlerMixin"
+    "ClientPlayNetworkHandlerMixin",
+    "InGameHudMixin",
+    "RenderSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

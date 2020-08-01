@@ -2,6 +2,7 @@ package me.hp20.giz5;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import me.hp20.giz5.options.Giz5Options;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.fabricmc.fabric.api.event.client.ClientTickCallback;
@@ -23,7 +24,6 @@ public class Giz5Mod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        loadOptions();
         sprintKeyBinding = new KeyBinding("giz5.options.toggleSprint", GLFW.GLFW_KEY_Z, "giz5");
         KeyBindingHelper.registerKeyBinding(sprintKeyBinding);
         ClientTickCallback.EVENT.register(new SprintClientTickCallback());
