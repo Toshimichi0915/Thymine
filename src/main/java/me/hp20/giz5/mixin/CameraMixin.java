@@ -27,21 +27,7 @@ public class CameraMixin {
     public void updateEyeHeight() {
         if (this.focusedEntity != null) {
             lastCameraY = cameraY;
-            switch (focusedEntity.getPose()) {
-                case CROUCHING:
-                    cameraY = 1.27F;
-                    break;
-                case SWIMMING:
-                case FALL_FLYING:
-                case SPIN_ATTACK:
-                    cameraY = 0.4F;
-                    break;
-                case SLEEPING:
-                    cameraY = 0.2F;
-                    break;
-                default:
-                    cameraY = 1.62F;
-            }
+            cameraY = focusedEntity.getStandingEyeHeight();
         }
     }
 }
