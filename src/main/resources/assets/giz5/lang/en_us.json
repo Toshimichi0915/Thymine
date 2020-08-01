@@ -1,7 +1,8 @@
 {
   "giz5.options.title": "giz5 Options",
-  "giz5.options.fullbright": "FullBright",
-  "giz5.options.fastsneak": "FastSneak",
-  "giz5.options.shiftfix": "ShiftFix",
-  "giz5.options.togglesprint": "ToggleSprint"
+  "giz5.options.fullBright": "FullBright",
+  "giz5.options.fastSneak": "FastSneak",
+  "giz5.options.shiftFix": "ShiftFix",
+  "giz5.options.toggleSprint": "ToggleSprint",
+  "giz5.options.sprint": "Sprint"
 }
