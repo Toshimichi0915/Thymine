@@ -10,7 +10,7 @@
   "contact": {
     "homepage": "https://hp20.me/"
   },
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
     "main": [
       "me.hp20.giz5.Giz5Mod"
