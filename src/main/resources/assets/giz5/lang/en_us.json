@@ -2,6 +2,7 @@
   "giz5.options.title": "giz5 Options",
   "giz5.options.fullBright": "FullBright",
   "giz5.options.fastSneak": "FastSneak",
+  "giz5.options.shiftFix": "ShiftFix",
   "giz5.options.toggleSprint": "ToggleSprint",
   "giz5.messages.toggleSprint.enabled": "Sprint Enabled",
   "giz5.messages.toggleSprint.disabled": "Sprint Disabled",

@@ -13,7 +13,7 @@ import net.minecraft.text.TranslatableText;
 
 public class Giz5OptionsScreen extends GameOptionsScreen {
 
-    private static final Option[] options;
+    private static Option[] options;
 
     private static Giz5Options options() {
         return Giz5Mod.getOptions();
@@ -24,7 +24,8 @@ public class Giz5OptionsScreen extends GameOptionsScreen {
                 new BooleanOption("giz5.options.fullBright", p -> options().fullBright, (s, b) -> options().fullBright = b),
                 new BooleanOption("giz5.options.fastSneak", p -> options().fastSneak, (s, b) -> options().fastSneak = b),
                 new BooleanOption("giz5.options.toggleSprint", p -> options().toggleSprint, (s, b) -> options().toggleSprint = b),
-                new BooleanOption("giz5.options.noHurtBobbing", p -> options().noHurtBobbing, (s, b) -> options().noHurtBobbing = b)
+                new BooleanOption("giz5.options.noHurtBobbing", p -> options().noHurtBobbing, (s, b) -> options().noHurtBobbing = b),
+                new BooleanOption("giz5.options.shiftFix", p -> options().shiftFix, (s, b) -> options().shiftFix = b),
         };
     }
 

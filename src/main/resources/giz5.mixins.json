@@ -10,6 +10,7 @@
     "CameraMixin",
     "LivingEntityMixin",
     "OptionsScreenMixin",
+    "ClientPlayNetworkHandlerMixin",
     "InGameHudMixin",
     "GameRendererMixin",
     "RenderSystemMixin"
