@@ -6,6 +6,7 @@ public class Giz5Options {
     public boolean shiftFix;
     public boolean toggleSprint;
     public boolean sprint;
+    public boolean noHurtBobbing;
     public ToggleSprintOptions toggleSprintHud;
 
     public Giz5Options() {
@@ -14,6 +15,7 @@ public class Giz5Options {
         shiftFix = true;
         toggleSprint = true;
         sprint = false;
+        noHurtBobbing = false;
         toggleSprintHud = new ToggleSprintOptions();
         toggleSprintHud.x = -200;
         toggleSprintHud.y = -15;
