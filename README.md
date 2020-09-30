@@ -6,6 +6,7 @@ This mod requires Minecraft 1.16+, fabric loader and fabric api
 1. Removes shift animation
 2. FullBright
 3. ToggleSprint
+4. NoHurtBobbing
 
 ### Fixed bugs
 1. Fixed [MC-145748](https://bugs.mojang.com/browse/MC-145748)
