@@ -14,7 +14,8 @@
     "InGameHudMixin",
     "GameRendererMixin",
     "RenderSystemMixin",
-    "HeldItemRendererMixin"
+    "HeldItemRendererMixin",
+    "InGameOverlayRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

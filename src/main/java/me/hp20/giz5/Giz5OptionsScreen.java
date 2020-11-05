@@ -26,7 +26,8 @@ public class Giz5OptionsScreen extends GameOptionsScreen {
                 new BooleanOption("giz5.options.toggleSprint", p -> options().toggleSprint, (s, b) -> options().toggleSprint = b),
                 new BooleanOption("giz5.options.noHurtBobbing", p -> options().noHurtBobbing, (s, b) -> options().noHurtBobbing = b),
                 new BooleanOption("giz5.options.shiftFix", p -> options().shiftFix, (s, b) -> options().shiftFix = b),
-                new BooleanOption("giz5.options.ignoreCooldown", p -> options().ignoreCooldown, (s, b) -> options().ignoreCooldown = b)
+                new BooleanOption("giz5.options.ignoreCooldown", p -> options().ignoreCooldown, (s, b) -> options().ignoreCooldown = b),
+                new BooleanOption("giz5.options.lowFire", p -> options().lowFire, (s, b) -> options().lowFire = b)
         };
     }
 

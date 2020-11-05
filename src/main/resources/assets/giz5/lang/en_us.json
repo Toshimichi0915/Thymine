@@ -7,5 +7,6 @@
   "giz5.messages.toggleSprint.enabled": "Sprint Enabled",
   "giz5.messages.toggleSprint.disabled": "Sprint Disabled",
   "giz5.options.noHurtBobbing": "NoHurtBobbing",
-  "giz5.options.ignoreCooldown": "IgnoreCooldown"
+  "giz5.options.ignoreCooldown": "IgnoreCooldown",
+  "giz5.options.lowFire": "lowFire"
 }
