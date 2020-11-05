@@ -8,7 +8,7 @@ public class Giz5Options {
     public boolean sprint;
     public boolean noHurtBobbing;
     public boolean ignoreCooldown;
-    public boolean lowFire;
+    public double lowFire;
     public ToggleSprintOptions toggleSprintHud;
 
     public Giz5Options() {
@@ -19,7 +19,7 @@ public class Giz5Options {
         sprint = false;
         noHurtBobbing = false;
         ignoreCooldown = false;
-        lowFire = false;
+        lowFire = 0;
         toggleSprintHud = new ToggleSprintOptions();
         toggleSprintHud.x = -200;
         toggleSprintHud.y = -15;

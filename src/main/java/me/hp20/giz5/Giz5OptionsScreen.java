@@ -6,6 +6,7 @@ import net.minecraft.client.gui.screen.ScreenTexts;
 import net.minecraft.client.gui.screen.options.GameOptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.options.BooleanOption;
+import net.minecraft.client.options.DoubleOption;
 import net.minecraft.client.options.GameOptions;
 import net.minecraft.client.options.Option;
 import net.minecraft.client.util.math.MatrixStack;
@@ -27,7 +28,8 @@ public class Giz5OptionsScreen extends GameOptionsScreen {
                 new BooleanOption("giz5.options.noHurtBobbing", p -> options().noHurtBobbing, (s, b) -> options().noHurtBobbing = b),
                 new BooleanOption("giz5.options.shiftFix", p -> options().shiftFix, (s, b) -> options().shiftFix = b),
                 new BooleanOption("giz5.options.ignoreCooldown", p -> options().ignoreCooldown, (s, b) -> options().ignoreCooldown = b),
-                new BooleanOption("giz5.options.lowFire", p -> options().lowFire, (s, b) -> options().lowFire = b)
+                new DoubleOption("giz5.options.lowFire", 0, 100, 1, p -> options().lowFire, (s, b) -> options().lowFire = b,
+                        (s, t) -> new TranslatableText("giz5.options.lowFire", String.format("%.0f", options().lowFire)))
         };
     }
 

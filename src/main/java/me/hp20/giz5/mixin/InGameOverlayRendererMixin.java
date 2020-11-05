@@ -47,9 +47,7 @@ public class InGameOverlayRendererMixin {
         float p = MathHelper.lerp(l, j, k);
         for (int r = 0; r < 2; ++r) {
             arg2.push();
-            float modifier = 0;
-            if (Giz5Mod.getOptions().lowFire)
-                modifier = -0.2F;
+            float modifier = (float) -Giz5Mod.getOptions().lowFire / 200;
             arg2.translate((float) (-(r * 2 - 1)) * 0.24f, -0.3f, 0.0);
             arg2.multiply(Vector3f.POSITIVE_Y.getDegreesQuaternion((float) (r * 2 - 1) * 10.0f));
             Matrix4f lv3 = arg2.peek().getModel();
