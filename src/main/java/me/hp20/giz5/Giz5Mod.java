@@ -52,6 +52,8 @@ public class Giz5Mod implements ModInitializer {
                 options = gson.fromJson(text, Giz5Options.class);
             } catch (IOException e) {
                 e.printStackTrace();
+                //If something goes wrong, renew config file
+                options = new Giz5Options();
             }
         } else {
             options = new Giz5Options();
