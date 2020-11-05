@@ -13,7 +13,8 @@
     "ClientPlayNetworkHandlerMixin",
     "InGameHudMixin",
     "GameRendererMixin",
-    "RenderSystemMixin"
+    "RenderSystemMixin",
+    "HeldItemRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
