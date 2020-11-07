@@ -9,5 +9,5 @@
   "giz5.options.noHurtBobbing": "NoHurtBobbing",
   "giz5.options.ignoreCooldown": "IgnoreCooldown",
   "giz5.options.lowFire": "LowFire: %f%%",
-  "giz5.options.softShift": "SoftShift"
+  "giz5.options.softSneak": "SoftSneak"
 }

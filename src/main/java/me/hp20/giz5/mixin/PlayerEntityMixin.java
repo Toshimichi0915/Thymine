@@ -25,7 +25,7 @@ public abstract class PlayerEntityMixin extends LivingEntity {
      */
     @Inject(at = @At("HEAD"), method = "getActiveEyeHeight(Lnet/minecraft/entity/EntityPose;Lnet/minecraft/entity/EntityDimensions;)F", cancellable = true)
     public void getActiveEyeHeight(EntityPose pose, EntityDimensions dimensions, CallbackInfoReturnable<Float> info) {
-        if (Giz5Mod.getOptions().softShift &&
+        if (Giz5Mod.getOptions().softSneak &&
                 pose == EntityPose.CROUCHING) {
             info.setReturnValue(dimensions.height * 0.93F);
             info.cancel();

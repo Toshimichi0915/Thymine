@@ -28,7 +28,7 @@ public class Giz5OptionsScreen extends GameOptionsScreen {
                 new BooleanOption("giz5.options.noHurtBobbing", p -> options().noHurtBobbing, (s, b) -> options().noHurtBobbing = b),
                 new BooleanOption("giz5.options.shiftFix", p -> options().shiftFix, (s, b) -> options().shiftFix = b),
                 new BooleanOption("giz5.options.ignoreCooldown", p -> options().ignoreCooldown, (s, b) -> options().ignoreCooldown = b),
-                new BooleanOption("giz5.options.softShift", p -> options().softShift, (s, b) -> options().softShift = b),
+                new BooleanOption("giz5.options.softSneak", p -> options().softSneak, (s, b) -> options().softSneak = b),
                 new DoubleOption("giz5.options.lowFire", 0, 100, 1, p -> options().lowFire, (s, b) -> options().lowFire = b,
                         (s, t) -> new TranslatableText("giz5.options.lowFire", String.format("%.0f", options().lowFire)))
         };
