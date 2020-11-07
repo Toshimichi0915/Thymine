@@ -16,12 +16,12 @@ public class Giz5Options {
         fullBright = true;
         fastSneak = false;
         shiftFix = true;
-        toggleSprint = true;
+        toggleSprint = false;
         sprint = false;
-        noHurtBobbing = false;
-        ignoreCooldown = false;
-        softSneak = false;
-        lowFire = 0;
+        noHurtBobbing = true;
+        ignoreCooldown = true;
+        softSneak = true;
+        lowFire = 40;
         toggleSprintHud = new ToggleSprintOptions();
         toggleSprintHud.x = -200;
         toggleSprintHud.y = -15;
