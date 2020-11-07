@@ -15,17 +15,24 @@ import net.minecraft.client.util.math.Vector3f;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.Matrix4f;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 @Mixin(InGameOverlayRenderer.class)
 public class InGameOverlayRendererMixin {
+
+    private static boolean supportSodium = true;
 
     /**
      * @reason Disables fire overlay
      * @author hp20
      */
-    @Overwrite
-    private static void renderFireOverlay(MinecraftClient arg, MatrixStack arg2) {
+    @Inject(at = @At("HEAD"), method = "renderFireOverlay(Lnet/minecraft/client/MinecraftClient;Lnet/minecraft/client/util/math/MatrixStack;)V", cancellable = true)
+    private static void renderFireOverlay(MinecraftClient arg, MatrixStack arg2, CallbackInfo info) {
         BufferBuilder lv = Tessellator.getInstance().getBuffer();
         RenderSystem.depthFunc(519);
         RenderSystem.depthMask(false);
@@ -63,5 +70,18 @@ public class InGameOverlayRendererMixin {
         RenderSystem.disableBlend();
         RenderSystem.depthMask(true);
         RenderSystem.depthFunc(515);
+
+        //sodium support
+        Sprite sprite = ModelLoader.FIRE_1.getSprite();
+        System.out.println(sprite.getClass().getCanonicalName());
+        if (supportSodium) {
+            try {
+                Method method = sprite.getClass().getMethod("markActive");
+                method.invoke(sprite);
+            } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
+                supportSodium = false;
+            }
+        }
+        info.cancel();
     }
 }
