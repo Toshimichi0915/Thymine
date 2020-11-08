@@ -8,6 +8,7 @@
   "giz5.messages.toggleSprint.disabled": "Sprint Disabled",
   "giz5.options.noHurtBobbing": "NoHurtBobbing",
   "giz5.options.ignoreCooldown": "IgnoreCooldown",
-  "giz5.options.lowFire": "LowFire: %f%%",
-  "giz5.options.softSneak": "SoftSneak"
+  "giz5.options.softSneak": "SoftSneak",
+  "giz5.options.forceIcon": "ForceIcon",
+  "giz5.options.lowFire": "LowFire: %f%%"
 }
