@@ -4,8 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import me.hp20.giz5.options.Giz5Options;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.fabricmc.fabric.api.event.client.ClientTickCallback;
 import net.minecraft.client.options.KeyBinding;
 import org.apache.commons.io.FileUtils;
 import org.lwjgl.glfw.GLFW;
@@ -26,7 +26,7 @@ public class Giz5Mod implements ModInitializer {
     public void onInitialize() {
         sprintKeyBinding = new KeyBinding("giz5.options.toggleSprint", GLFW.GLFW_KEY_Z, "giz5");
         KeyBindingHelper.registerKeyBinding(sprintKeyBinding);
-        ClientTickCallback.EVENT.register(new SprintClientTickCallback());
+        ClientTickEvents.START_CLIENT_TICK.register(new SprintStartTick());
     }
 
     public static Giz5Options getOptions() {
