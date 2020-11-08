@@ -24,7 +24,7 @@ public class Giz5Mod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        sprintKeyBinding = new KeyBinding("giz5.options.toggleSprint", GLFW.GLFW_KEY_Z, "giz5");
+        sprintKeyBinding = new KeyBinding("giz5.options.toggleSprint", GLFW.GLFW_KEY_R, "giz5");
         KeyBindingHelper.registerKeyBinding(sprintKeyBinding);
         ClientTickEvents.START_CLIENT_TICK.register(new SprintStartTick());
     }
