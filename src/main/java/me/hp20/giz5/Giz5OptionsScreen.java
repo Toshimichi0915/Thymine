@@ -30,6 +30,7 @@ public class Giz5OptionsScreen extends GameOptionsScreen {
                 new BooleanOption("giz5.options.ignoreCooldown", p -> options().ignoreCooldown, (s, b) -> options().ignoreCooldown = b),
                 new BooleanOption("giz5.options.softSneak", p -> options().softSneak, (s, b) -> options().softSneak = b),
                 new BooleanOption("giz5.options.forceIcon", p -> options().forceIcon, (s, b) -> options().forceIcon = b),
+                new BooleanOption("giz5.options.antiSwim", p -> options().antiSwim, (s, b) -> options().antiSwim = b),
                 new DoubleOption("giz5.options.lowFire", 0, 100, 1, p -> options().lowFire, (s, b) -> options().lowFire = b,
                         (s, t) -> new TranslatableText("giz5.options.lowFire", String.format("%.0f", options().lowFire)))
         };

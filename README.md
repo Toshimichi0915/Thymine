@@ -10,6 +10,7 @@ This mod requires Minecraft 1.16+, fabric loader and fabric api
 5. LowFire - Decreases fire height
 6. SoftSneak - Increases sneak height
 7. ForceIcon - Always show your potion effects on your screen
+8. AntiSwim - Disables swimming pose for servers using ViaVersion
 
 ### Fixed bugs
 1. Fixed [MC-145748](https://bugs.mojang.com/browse/MC-145748)

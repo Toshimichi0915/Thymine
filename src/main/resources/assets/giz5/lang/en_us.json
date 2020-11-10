@@ -10,5 +10,6 @@
   "giz5.options.ignoreCooldown": "IgnoreCooldown",
   "giz5.options.softSneak": "SoftSneak",
   "giz5.options.forceIcon": "ForceIcon",
+  "giz5.options.antiSwim": "AntiSwim",
   "giz5.options.lowFire": "LowFire: %f%%"
 }

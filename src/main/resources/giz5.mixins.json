@@ -17,7 +17,8 @@
     "HeldItemRendererMixin",
     "InGameOverlayRendererMixin",
     "PlayerEntityMixin",
-    "StatusEffectInstanceMixin"
+    "StatusEffectInstanceMixin",
+    "EntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
