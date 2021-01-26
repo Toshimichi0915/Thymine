@@ -16,7 +16,7 @@ public class InGameHudMixin {
 
     @Inject(at = @At("TAIL"), method = "render(Lnet/minecraft/client/util/math/MatrixStack;F)V")
     public void render(MatrixStack stack, float f, CallbackInfo info) {
-        if (Giz5Mod.getOptions().toggleSprint)
+        if (!Giz5Mod.getOptions().toggleSprintHud.isHidden() && Giz5Mod.getOptions().toggleSprint)
             toggleSprintHud.render(stack);
     }
 }
