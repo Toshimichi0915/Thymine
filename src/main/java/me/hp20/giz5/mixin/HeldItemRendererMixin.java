@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class HeldItemRendererMixin {
 
     @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/network/ClientPlayerEntity;getAttackCooldownProgress(F)F"),
-            method = "updateHeldItems", require = 0)
+            method = "updateHeldItems")
     public float getAttackCooldownProgress(ClientPlayerEntity entity, float baseTime) {
         if (Giz5Mod.getOptions().ignoreCooldown)
             return 1;

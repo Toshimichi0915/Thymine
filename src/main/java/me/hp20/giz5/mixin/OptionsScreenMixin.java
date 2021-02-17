@@ -23,7 +23,7 @@ public abstract class OptionsScreenMixin extends Screen {
         super(title);
     }
 
-    @Inject(at = @At("TAIL"), method = "init()V")
+    @Inject(at = @At("TAIL"), method = "init()V", require = 1)
     public void init(CallbackInfo info) {
         addButton(new ButtonWidget(width / 2 - 155, height / 6 + 144 - 6, 150, 20,
                 new TranslatableText("giz5.options.title"), (w) -> {
