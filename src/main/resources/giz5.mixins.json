@@ -6,19 +6,19 @@
   "mixins": [
   ],
   "client": [
-    "SliderWidgetMixin",
     "CameraMixin",
+    "ClientPlayNetworkHandlerMixin",
+    "EntityMixin",
+    "GameRendererMixin",
+    "HeldItemRendererMixin",
+    "InGameHudMixin",
+    "InGameOverlayRendererMixin",
     "LivingEntityMixin",
     "OptionsScreenMixin",
-    "ClientPlayNetworkHandlerMixin",
-    "InGameHudMixin",
-    "GameRendererMixin",
-    "RenderSystemMixin",
-    "HeldItemRendererMixin",
-    "InGameOverlayRendererMixin",
     "PlayerEntityMixin",
-    "StatusEffectInstanceMixin",
-    "EntityMixin"
+    "RenderSystemMixin",
+    "SliderWidgetMixin",
+    "StatusEffectInstanceMixin"
   ],
   "injectors": {
     "defaultRequire": 0
