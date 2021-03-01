@@ -54,13 +54,14 @@ public class Giz5OptionsScreen extends GameOptionsScreen {
         }
 
         this.addButton(new ButtonWidget(this.width / 2 - 100, this.height / 6 + 24 * (count + 1) / 2, 200, 20, ScreenTexts.DONE, (buttonWidget) -> {
-            this.client.openScreen(this.parent);
+            onClose();
         }));
     }
 
     @Override
     public void onClose() {
         Giz5Mod.saveOptions();
+        super.onClose();
     }
 
     @Override
