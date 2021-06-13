@@ -1,7 +1,7 @@
 package me.hp20.giz5.mixin;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.widget.AbstractButtonWidget;
+import net.minecraft.client.gui.widget.ClickableWidget;
 import net.minecraft.client.gui.widget.SliderWidget;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(SliderWidget.class)
-public class SliderWidgetMixin extends AbstractButtonWidget {
+abstract public class SliderWidgetMixin extends ClickableWidget {
 
     private boolean isClicked;
 

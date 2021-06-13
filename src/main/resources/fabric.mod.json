@@ -20,11 +20,9 @@
     "giz5.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.9.0",
+    "fabricloader": ">=0.11.3",
     "fabric": "*",
-    "minecraft": "1.16.x"
-  },
-  "suggests": {
-    "flamingo": "*"
+    "minecraft": "1.17.x",
+    "java": ">=16"
   }
 }

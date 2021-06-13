@@ -1,6 +1,5 @@
 package me.hp20.giz5;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
@@ -13,7 +12,6 @@ public class ToggleSprintHud extends DrawableHelper {
         MinecraftClient client = MinecraftClient.getInstance();
         TextRenderer renderer = client.textRenderer;
         client.getProfiler().push("toggleSprint");
-        RenderSystem.pushMatrix();
 
         float x = Giz5Mod.getOptions().toggleSprintHud.getX();
         float y = Giz5Mod.getOptions().toggleSprintHud.getY();
@@ -25,7 +23,6 @@ public class ToggleSprintHud extends DrawableHelper {
             String toggleSprintDisabled = new TranslatableText("giz5.messages.toggleSprint.disabled").getString();
             renderer.drawWithShadow(stack, toggleSprintDisabled, x, y, color);
         }
-        RenderSystem.popMatrix();
         client.getProfiler().pop();
     }
 }

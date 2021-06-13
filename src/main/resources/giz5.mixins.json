@@ -2,9 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "me.hp20.giz5.mixin",
-  "compatibilityLevel": "JAVA_8",
-  "mixins": [
-  ],
+  "compatibilityLevel": "JAVA_16",
   "client": [
     "CameraMixin",
     "ClientPlayNetworkHandlerMixin",

@@ -6,7 +6,7 @@ import me.hp20.giz5.options.Giz5Options;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.options.KeyBinding;
+import net.minecraft.client.option.KeyBinding;
 import org.apache.commons.io.FileUtils;
 import org.lwjgl.glfw.GLFW;
 
