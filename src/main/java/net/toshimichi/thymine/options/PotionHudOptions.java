@@ -1,5 +1,5 @@
 package net.toshimichi.thymine.options;
 
-public class ToggleSprintOptions extends HudOptions {
+public class PotionHudOptions extends HudOptions {
     public int color;
 }

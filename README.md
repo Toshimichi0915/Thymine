@@ -11,6 +11,8 @@ This mod requires Minecraft 1.16+, fabric loader and fabric api
 6. SoftSneak - Increases sneak height
 7. ForceIcon - Always shows your potion effects on your screen
 8. AntiSwim - Disables swimming pose for servers using ViaVersion
+9. PotionHUD - Shows potion HUD
+10. NoStatusOverlay - Hides default status overlay
 
 ### Fixed bugs
 1. [MC-145748](https://bugs.mojang.com/browse/MC-145748)

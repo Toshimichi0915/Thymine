@@ -9,6 +9,7 @@ import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.EntityTrackerUpdateS2CPacket;
 import net.toshimichi.thymine.ThymineMod;
+import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,6 +22,7 @@ public abstract class ClientPlayNetworkHandlerMixin implements ClientPlayPacketL
     @Shadow
     private ClientWorld world;
 
+    @Final
     @Shadow
     private MinecraftClient client;
 

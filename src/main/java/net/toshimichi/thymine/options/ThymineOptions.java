@@ -11,8 +11,11 @@ public class ThymineOptions {
     public boolean softSneak;
     public boolean forceIcon;
     public boolean antiSwim;
+    public boolean potionHud;
+    public boolean noStatusOverlay;
     public double lowFire;
-    public ToggleSprintOptions toggleSprintHud;
+    public ToggleSpringHudOptions toggleSprintHud;
+    public PotionHudOptions potionHudOptions;
 
     public ThymineOptions() {
         fullBright = true;
@@ -25,11 +28,19 @@ public class ThymineOptions {
         softSneak = true;
         forceIcon = true;
         antiSwim = false;
+        potionHud = true;
+        noStatusOverlay = true;
         lowFire = 40;
-        toggleSprintHud = new ToggleSprintOptions();
+        toggleSprintHud = new ToggleSpringHudOptions();
         toggleSprintHud.x = -200;
         toggleSprintHud.y = -15;
         toggleSprintHud.position = Position.CENTER_BOTTOM;
         toggleSprintHud.color = 0xE0E0E0;
+
+        potionHudOptions = new PotionHudOptions();
+        potionHudOptions.x = 10;
+        potionHudOptions.y = 10;
+        potionHudOptions.position = Position.LEFT_TOP;
+        potionHudOptions.color = 0xE0E0E0;
     }
 }

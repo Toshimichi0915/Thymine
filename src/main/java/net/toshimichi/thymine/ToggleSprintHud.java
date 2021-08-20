@@ -8,7 +8,7 @@ import net.minecraft.text.TranslatableText;
 
 public class ToggleSprintHud extends DrawableHelper {
 
-    public void render(MatrixStack stack) {
+    public void render(MatrixStack stack, float partial) {
         MinecraftClient client = MinecraftClient.getInstance();
         TextRenderer renderer = client.textRenderer;
         client.getProfiler().push("toggleSprint");
