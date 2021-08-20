@@ -1,4 +1,4 @@
-package me.hp20.giz5;
+package net.toshimichi.thymine;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
@@ -13,14 +13,14 @@ public class ToggleSprintHud extends DrawableHelper {
         TextRenderer renderer = client.textRenderer;
         client.getProfiler().push("toggleSprint");
 
-        float x = Giz5Mod.getOptions().toggleSprintHud.getX();
-        float y = Giz5Mod.getOptions().toggleSprintHud.getY();
-        int color = Giz5Mod.getOptions().toggleSprintHud.color;
-        if (Giz5Mod.getOptions().sprint) {
-            String toggleSprintEnabled = new TranslatableText("giz5.messages.toggleSprint.enabled").getString();
+        float x = ThymineMod.getOptions().toggleSprintHud.getX();
+        float y = ThymineMod.getOptions().toggleSprintHud.getY();
+        int color = ThymineMod.getOptions().toggleSprintHud.color;
+        if (ThymineMod.getOptions().sprint) {
+            String toggleSprintEnabled = new TranslatableText("thymine.messages.toggleSprint.enabled").getString();
             renderer.drawWithShadow(stack, toggleSprintEnabled, x, y, color);
         } else {
-            String toggleSprintDisabled = new TranslatableText("giz5.messages.toggleSprint.disabled").getString();
+            String toggleSprintDisabled = new TranslatableText("thymine.messages.toggleSprint.disabled").getString();
             renderer.drawWithShadow(stack, toggleSprintDisabled, x, y, color);
         }
         client.getProfiler().pop();

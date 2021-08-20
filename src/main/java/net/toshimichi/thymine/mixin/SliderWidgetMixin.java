@@ -1,4 +1,4 @@
-package me.hp20.giz5.mixin;
+package net.toshimichi.thymine.mixin;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.widget.ClickableWidget;

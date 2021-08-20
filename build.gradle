@@ -1,14 +1,13 @@
 plugins {
     id 'fabric-loom' version '0.8-SNAPSHOT'
-    id 'maven-publish'
 }
 
 sourceCompatibility = JavaVersion.VERSION_16
 targetCompatibility = JavaVersion.VERSION_16
 
-archivesBaseName = project.archives_base_name
 version = project.mod_version
 group = project.maven_group
+archivesBaseName = project.archives_base_name
 
 dependencies {
     minecraft "com.mojang:minecraft:${project.minecraft_version}"
@@ -24,10 +23,12 @@ processResources {
         expand "version": project.version
     }
 }
+
 tasks.withType(JavaCompile).configureEach {
     it.options.encoding = "UTF-8"
     it.options.release = 16
 }
+
 jar {
     from "LICENSE"
 }

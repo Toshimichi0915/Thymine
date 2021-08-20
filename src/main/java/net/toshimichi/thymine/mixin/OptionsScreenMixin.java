@@ -1,12 +1,12 @@
-package me.hp20.giz5.mixin;
+package net.toshimichi.thymine.mixin;
 
-import me.hp20.giz5.Giz5OptionsScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.OptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
+import net.toshimichi.thymine.ThymineOptionsScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -26,8 +26,8 @@ public abstract class OptionsScreenMixin extends Screen {
     @Inject(at = @At("TAIL"), method = "init()V")
     public void init(CallbackInfo info) {
         addDrawableChild(new ButtonWidget(width / 2 - 155, height / 6 + 144 - 6, 150, 20,
-                new TranslatableText("giz5.options.title"), (w) -> {
-            client.openScreen(new Giz5OptionsScreen(this, settings));
+                new TranslatableText("thymine.options.title"), (w) -> {
+            client.openScreen(new ThymineOptionsScreen(this, settings));
         }));
     }
 }

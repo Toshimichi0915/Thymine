@@ -1,5 +1,5 @@
-# giz5
-giz5 fixes small bugs and improve your combat experience
+# Thymine
+Thymine fixes small bugs and improve your combat experience
 This mod requires Minecraft 1.16+, fabric loader and fabric api
 
 ### Features

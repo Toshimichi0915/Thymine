@@ -1,9 +1,9 @@
-package me.hp20.giz5.mixin;
+package net.toshimichi.thymine.mixin;
 
-import me.hp20.giz5.Giz5Mod;
-import me.hp20.giz5.ToggleSprintHud;
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
+import net.toshimichi.thymine.ThymineMod;
+import net.toshimichi.thymine.ToggleSprintHud;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -16,7 +16,7 @@ public class InGameHudMixin {
 
     @Inject(at = @At("TAIL"), method = "render(Lnet/minecraft/client/util/math/MatrixStack;F)V")
     public void render(MatrixStack stack, float f, CallbackInfo info) {
-        if (!Giz5Mod.getOptions().toggleSprintHud.isHidden() && Giz5Mod.getOptions().toggleSprint)
+        if (!ThymineMod.getOptions().toggleSprintHud.isHidden() && ThymineMod.getOptions().toggleSprint)
             toggleSprintHud.render(stack);
     }
 }

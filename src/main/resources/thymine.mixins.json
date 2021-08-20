@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "me.hp20.giz5.mixin",
+  "package": "net.toshimichi.thymine.mixin",
   "compatibilityLevel": "JAVA_16",
   "client": [
     "CameraMixin",

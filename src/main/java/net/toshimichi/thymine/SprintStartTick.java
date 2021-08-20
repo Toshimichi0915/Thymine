@@ -1,8 +1,8 @@
-package me.hp20.giz5;
+package net.toshimichi.thymine;
 
-import me.hp20.giz5.options.Giz5Options;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
+import net.toshimichi.thymine.options.ThymineOptions;
 
 public class SprintStartTick implements ClientTickEvents.StartTick {
 
@@ -10,9 +10,9 @@ public class SprintStartTick implements ClientTickEvents.StartTick {
 
     @Override
     public void onStartTick(MinecraftClient client) {
-        Giz5Options opt = Giz5Mod.getOptions();
+        ThymineOptions opt = ThymineMod.getOptions();
         if (!opt.toggleSprint) return;
-        boolean pressed = Giz5Mod.getSprintKeyBinding().isPressed();
+        boolean pressed = ThymineMod.getSprintKeyBinding().isPressed();
         if (pressed && !lastPressed) {
             opt.sprint = !opt.sprint;
             if (!opt.sprint)

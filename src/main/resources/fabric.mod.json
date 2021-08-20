@@ -1,23 +1,23 @@
 {
   "schemaVersion": 1,
-  "id": "giz5",
+  "id": "thymine",
   "version": "${version}",
-  "name": "giz5",
-  "description": "giz5 fixes small bugs and improve your combat experience",
+  "name": "Thymine",
+  "description": "Thymine fixes small bugs and improve your combat experience",
   "authors": [
-    "hp20"
+    "Toshimichi0915"
   ],
   "contact": {
-    "homepage": "https://hp20.me/"
+    "homepage": "https://toshimichi.net/"
   },
   "environment": "client",
   "entrypoints": {
     "main": [
-      "me.hp20.giz5.Giz5Mod"
+      "net.toshimichi.thymine.ThymineMod"
     ]
   },
   "mixins": [
-    "giz5.mixins.json"
+    "thymine.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.11.3",

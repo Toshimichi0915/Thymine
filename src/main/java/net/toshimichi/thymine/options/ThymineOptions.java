@@ -1,6 +1,6 @@
-package me.hp20.giz5.options;
+package net.toshimichi.thymine.options;
 
-public class Giz5Options {
+public class ThymineOptions {
     public boolean fullBright;
     public boolean fastSneak;
     public boolean shiftFix;
@@ -14,7 +14,7 @@ public class Giz5Options {
     public double lowFire;
     public ToggleSprintOptions toggleSprintHud;
 
-    public Giz5Options() {
+    public ThymineOptions() {
         fullBright = true;
         fastSneak = false;
         shiftFix = true;

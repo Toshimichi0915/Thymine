@@ -1,4 +1,4 @@
-package me.hp20.giz5.options;
+package net.toshimichi.thymine.options;
 
 public class ToggleSprintOptions extends HudOptions {
     public int color;
