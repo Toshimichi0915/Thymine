@@ -2,6 +2,7 @@ package net.toshimichi.thymine.mixin;
 
 import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.client.util.math.MatrixStack;
+import net.toshimichi.thymine.ArmorHud;
 import net.toshimichi.thymine.PotionHud;
 import net.toshimichi.thymine.ThymineMod;
 import net.toshimichi.thymine.ToggleSprintHud;
@@ -15,6 +16,7 @@ public class InGameHudMixin {
 
     private final ToggleSprintHud toggleSprintHud = new ToggleSprintHud();
     private final PotionHud potionHud = new PotionHud();
+    private final ArmorHud armorHud = new ArmorHud();
 
     @Inject(at = @At("TAIL"), method = "render(Lnet/minecraft/client/util/math/MatrixStack;F)V")
     public void render(MatrixStack stack, float f, CallbackInfo info) {
@@ -23,6 +25,9 @@ public class InGameHudMixin {
         }
         if (ThymineMod.getOptions().potionHud) {
             potionHud.render(stack, f);
+        }
+        if (ThymineMod.getOptions().armorHud) {
+            armorHud.render(stack, f);
         }
     }
 

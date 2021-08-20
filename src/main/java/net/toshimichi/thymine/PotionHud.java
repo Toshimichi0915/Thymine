@@ -12,8 +12,8 @@ public class PotionHud extends DrawableHelper {
 
     public void render(MatrixStack stack, float partial) {
         MinecraftClient client = MinecraftClient.getInstance();
-        TextRenderer renderer = client.textRenderer;
         client.getProfiler().push("potionHud");
+        TextRenderer renderer = client.textRenderer;
 
         float x = ThymineMod.getOptions().potionHudOptions.getX();
         float y = ThymineMod.getOptions().potionHudOptions.getY();
@@ -34,7 +34,6 @@ public class PotionHud extends DrawableHelper {
             }
             index++;
         }
-
         client.getProfiler().pop();
     }
 }

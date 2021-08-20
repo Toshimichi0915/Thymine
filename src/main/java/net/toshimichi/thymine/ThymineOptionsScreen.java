@@ -32,6 +32,7 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
                 CyclingOption.create("thymine.options.forceIcon", p -> options().forceIcon, (g, o, t) -> options().forceIcon = t),
                 CyclingOption.create("thymine.options.antiSwim", p -> options().antiSwim, (g, o, t) -> options().antiSwim = t),
                 CyclingOption.create("thymine.options.potionHud", p -> options().potionHud, (g, o, t) -> options().potionHud = t),
+                CyclingOption.create("thymine.options.armorHud", p -> options().armorHud, (g, o, t) -> options().armorHud = t),
                 CyclingOption.create("thymine.options.noStatusOverlay", p -> options().noStatusOverlay, (g, o, t) -> options().noStatusOverlay = t),
                 new DoubleOption("thymine.options.lowFire", 0, 100, 1, p -> options().lowFire, (s, b) -> options().lowFire = b,
                         (s, t) -> new TranslatableText("thymine.options.lowFire", String.format("%.0f", options().lowFire)))

@@ -10,8 +10,8 @@ public class ToggleSprintHud extends DrawableHelper {
 
     public void render(MatrixStack stack, float partial) {
         MinecraftClient client = MinecraftClient.getInstance();
-        TextRenderer renderer = client.textRenderer;
         client.getProfiler().push("toggleSprint");
+        TextRenderer renderer = client.textRenderer;
 
         float x = ThymineMod.getOptions().toggleSprintHud.getX();
         float y = ThymineMod.getOptions().toggleSprintHud.getY();
