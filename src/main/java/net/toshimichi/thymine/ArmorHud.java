@@ -5,6 +5,8 @@ import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.GameMode;
+import net.toshimichi.thymine.mixin.ClientPlayerInteractionManagerAccessor;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +15,9 @@ public class ArmorHud extends DrawableHelper {
 
     public void render(MatrixStack stack, float partial) {
         MinecraftClient client = MinecraftClient.getInstance();
+        GameMode current = ((ClientPlayerInteractionManagerAccessor) client.interactionManager).getGameMode();
+        if (current != GameMode.SURVIVAL && current != GameMode.ADVENTURE) return;
+
         client.getProfiler().push("armorHud");
         ItemRenderer itemRenderer = client.getItemRenderer();
 
