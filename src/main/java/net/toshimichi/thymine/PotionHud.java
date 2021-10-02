@@ -1,6 +1,5 @@
 package net.toshimichi.thymine;
 
-import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawableHelper;
@@ -20,7 +19,7 @@ public class PotionHud extends DrawableHelper {
         int index = 0;
         for (StatusEffectInstance effect : client.player.getStatusEffects()) {
             Sprite sprite = client.getStatusEffectSpriteManager().getSprite(effect.getEffectType());
-            RenderSystem.setShaderTexture(0, sprite.getAtlas().getId());
+            client.getTextureManager().bindTexture(sprite.getAtlas().getId());
             drawSprite(stack, (int) x, (int) y + (index * 25), getZOffset(), 18, 18, sprite);
 
             int seconds = effect.getDuration() / 20;

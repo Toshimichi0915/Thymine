@@ -5,7 +5,7 @@ import com.google.gson.GsonBuilder;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
-import net.minecraft.client.option.KeyBinding;
+import net.minecraft.client.options.KeyBinding;
 import net.toshimichi.thymine.options.ThymineOptions;
 import org.apache.commons.io.FileUtils;
 import org.lwjgl.glfw.GLFW;
