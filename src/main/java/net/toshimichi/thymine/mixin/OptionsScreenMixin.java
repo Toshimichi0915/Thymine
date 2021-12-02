@@ -29,7 +29,7 @@ public abstract class OptionsScreenMixin extends Screen {
     public void init(CallbackInfo info) {
         addDrawableChild(new ButtonWidget(width / 2 - 155, height / 6 + 144 - 6, 150, 20,
                 new TranslatableText("thymine.options.title"), (w) -> {
-            client.openScreen(new ThymineOptionsScreen(this, settings));
+            client.setScreen(new ThymineOptionsScreen(this, settings));
         }));
     }
 }
