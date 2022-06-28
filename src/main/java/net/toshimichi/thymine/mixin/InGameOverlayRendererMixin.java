@@ -14,7 +14,7 @@ public class InGameOverlayRendererMixin {
 
     @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/BufferBuilder;vertex(Lnet/minecraft/util/math/Matrix4f;FFF)Lnet/minecraft/client/render/VertexConsumer;"), method = "renderFireOverlay")
     private static VertexConsumer vertex(BufferBuilder bufferBuilder, Matrix4f matrix4f, float x, float y, float z) {
-        float modifier = (float) -ThymineMod.getOptions().lowFire / 200;
+        float modifier = (float) -ThymineMod.getOptions().lowFire / 2;
         return bufferBuilder.vertex(matrix4f, x, y + modifier, z);
     }
 }

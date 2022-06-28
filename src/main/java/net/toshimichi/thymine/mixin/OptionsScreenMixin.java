@@ -5,7 +5,6 @@ import net.minecraft.client.gui.screen.option.OptionsScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.text.Text;
-import net.minecraft.text.TranslatableText;
 import net.toshimichi.thymine.ThymineOptionsScreen;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -28,7 +27,7 @@ public abstract class OptionsScreenMixin extends Screen {
     @Inject(at = @At("TAIL"), method = "init()V")
     public void init(CallbackInfo info) {
         addDrawableChild(new ButtonWidget(width / 2 - 155, height / 6 + 144 - 6, 150, 20,
-                new TranslatableText("thymine.options.title"), (w) -> {
+                Text.translatable("thymine.options.title"), (w) -> {
             client.setScreen(new ThymineOptionsScreen(this, settings));
         }));
     }

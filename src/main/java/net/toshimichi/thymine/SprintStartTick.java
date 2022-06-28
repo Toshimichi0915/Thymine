@@ -16,10 +16,10 @@ public class SprintStartTick implements ClientTickEvents.StartTick {
         if (pressed && !lastPressed) {
             opt.sprint = !opt.sprint;
             if (!opt.sprint)
-                client.options.keySprint.setPressed(false);
+                client.options.sprintKey.setPressed(false);
         }
         lastPressed = pressed;
         if (opt.sprint)
-            client.options.keySprint.setPressed(true);
+            client.options.sprintKey.setPressed(true);
     }
 }
