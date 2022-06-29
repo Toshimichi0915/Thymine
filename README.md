@@ -1,7 +1,7 @@
 # Thymine
 Thymine fixes small bugs and improves combat experience
 
-This mod requires Minecraft 1.16+, fabric loader and fabric api
+This mod supports Minecraft 1.16, 1.17, 1.18, 1.19, and requires fabric loader and fabric api
 
 ![2021-08-21_00 49 23](https://user-images.githubusercontent.com/26406334/130259883-ef019291-5a2e-447e-a198-d88d80dc1162.png)
 
