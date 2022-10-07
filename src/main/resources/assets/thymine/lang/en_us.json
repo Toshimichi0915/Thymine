@@ -14,5 +14,7 @@
   "thymine.options.potionHud": "PotionHUD",
   "thymine.options.armorHud": "ArmorHUD",
   "thymine.options.noStatusOverlay": "NoStatusOverlay",
+  "thymine.options.noScreenBobbing": "NoScreenBobbing",
+  "thymine.options.showHitBox": "ShowHitBox",
   "thymine.options.lowFire": "LowFire: %f%%"
 }
