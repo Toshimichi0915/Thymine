@@ -17,6 +17,8 @@ This mod supports Minecraft 1.16, 1.17, 1.18, 1.19, and requires fabric loader a
 9. PotionHUD - Shows potion HUD
 10. ArmorHUD - Shows armor HUD
 11. NoStatusOverlay - Hides default status overlay
+12. NoScreenBobbing - Prevents screen bobbing but does not prevent hand bobbing
+13. ShowHitBox - Shows entity hitboxes
 
 ### Fixed bugs
 1. [MC-145748](https://bugs.mojang.com/browse/MC-145748)
