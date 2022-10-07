@@ -14,6 +14,8 @@ public class ThymineOptions {
     public boolean potionHud;
     public boolean armorHud;
     public boolean noStatusOverlay;
+    public boolean noScreenBobbing;
+    public boolean showHitBox;
     public double lowFire;
     public ToggleSpringHudOptions toggleSprintHud;
     public PotionHudOptions potionHudOptions;
@@ -33,6 +35,8 @@ public class ThymineOptions {
         armorHud = true;
         noStatusOverlay = true;
         lowFire = 40;
+        noScreenBobbing = false;
+        showHitBox = false;
         toggleSprintHud = new ToggleSpringHudOptions();
         toggleSprintHud.x = -200;
         toggleSprintHud.y = -15;

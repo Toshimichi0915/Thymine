@@ -34,6 +34,8 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
                 CyclingOption.create("thymine.options.potionHud", p -> options().potionHud, (g, o, t) -> options().potionHud = t),
                 CyclingOption.create("thymine.options.armorHud", p -> options().armorHud, (g, o, t) -> options().armorHud = t),
                 CyclingOption.create("thymine.options.noStatusOverlay", p -> options().noStatusOverlay, (g, o, t) -> options().noStatusOverlay = t),
+                CyclingOption.create("thymine.options.noScreenBobbing", p -> options().noScreenBobbing, (g, o, t) -> options().noScreenBobbing = t),
+                CyclingOption.create("thymine.options.showHitBox", p -> options().showHitBox, (g, o, t) -> options().showHitBox = t),
                 new DoubleOption("thymine.options.lowFire", 0, 100, 1, p -> options().lowFire, (s, b) -> options().lowFire = b,
                         (s, t) -> new TranslatableText("thymine.options.lowFire", String.format("%.0f", options().lowFire)))
         };
@@ -47,7 +49,6 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
     protected void init() {
         int count = 0;
         int size = options.length;
-
         for (int i = 0; i < size; i++) {
             Option option = options[i];
             int x = this.width / 2 - 155 + i % 2 * 160;
