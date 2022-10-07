@@ -19,7 +19,7 @@ public class EntityRenderDispatcherMixin {
 
     @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/util/math/MatrixStack;pop()V"), method = "render")
     public void render(Entity entity, double x, double y, double z, float yaw, float tickDelta, MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, CallbackInfo ci) {
-        if (ThymineMod.getOptions().showHitBox && !(entity instanceof ClientPlayerEntity)) {
+        if (ThymineMod.getOptions().showHitBox && !entity.isInvisible() && !(entity instanceof ClientPlayerEntity)) {
             Box box = entity.getBoundingBox().offset(-entity.getX(), -entity.getY(), -entity.getZ());
             WorldRenderer.drawBox(matrices, vertexConsumers.getBuffer(RenderLayer.getLines()), box, 1.0f, 1.0f, 1.0f, 1.0f);
         }
