@@ -38,6 +38,8 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
                 SimpleOption.ofBoolean("thymine.options.potionHud", options().potionHud, t -> options().potionHud = t),
                 SimpleOption.ofBoolean("thymine.options.armorHud", options().armorHud, t -> options().armorHud = t),
                 SimpleOption.ofBoolean("thymine.options.noStatusOverlay", options().noStatusOverlay, t -> options().noStatusOverlay = t),
+                SimpleOption.ofBoolean("thymine.options.noScreenBobbing", options().noScreenBobbing, t -> options().noScreenBobbing = t),
+                SimpleOption.ofBoolean("thymine.options.showHitBox", options().showHitBox, t -> options().showHitBox = t),
                 new SimpleOption<>("thymine.options.lowFire", SimpleOption.emptyTooltip(), ThymineOptionsScreen::getPercentValueText,
                         SimpleOption.DoubleSliderCallbacks.INSTANCE, options().lowFire, (v) -> options().lowFire = v),
         };
