@@ -20,8 +20,8 @@ public abstract class PlayerEntityMixin extends LivingEntity {
     }
 
     /**
+     * @author Toshimichi0915
      * @reason to change eye height when sneaking
-     * @author hp20
      */
     @Inject(at = @At("HEAD"), method = "getActiveEyeHeight(Lnet/minecraft/entity/EntityPose;Lnet/minecraft/entity/EntityDimensions;)F", cancellable = true)
     public void getActiveEyeHeight(EntityPose pose, EntityDimensions dimensions, CallbackInfoReturnable<Float> info) {

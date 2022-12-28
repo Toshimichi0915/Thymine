@@ -8,6 +8,7 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.EntityTrackerUpdateS2CPacket;
+import net.minecraft.network.packet.s2c.play.ResourcePackSendS2CPacket;
 import net.toshimichi.thymine.ThymineMod;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -31,12 +32,17 @@ public abstract class ClientPlayNetworkHandlerMixin implements ClientPlayPacketL
         if (ThymineMod.getOptions().shiftFix) {
             NetworkThreadUtils.forceMainThread(packet, this, client);
             Entity entity = this.world.getEntityById(packet.id());
-            if (entity != null && packet.getTrackedValues() != null) {
+            if (entity != null && packet.trackedValues() != null) {
                 if (entity.equals(client.player))
-                    packet.getTrackedValues().removeIf(p -> p.getData().getType().equals(TrackedDataHandlerRegistry.ENTITY_POSE));
-                entity.getDataTracker().writeUpdatedEntries(packet.getTrackedValues());
+                    packet.trackedValues().removeIf(p -> p.handler().equals(TrackedDataHandlerRegistry.ENTITY_POSE));
+                entity.getDataTracker().writeUpdatedEntries(packet.trackedValues());
             }
             info.cancel();
         }
+    }
+
+    @Inject(at = @At("HEAD"), method="onResourcePackSend(Lnet/minecraft/network/packet/s2c/play/ResourcePackSendS2CPacket;)V", cancellable = true)
+    public void onResourcePackSend(ResourcePackSendS2CPacket packet, CallbackInfo ci) {
+
     }
 }

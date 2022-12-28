@@ -23,12 +23,11 @@ public abstract class EntityMixin {
     private EntityType<?> type;
 
     @Final
-    @Shadow
-    private DataTracker dataTracker;
+    @Shadow protected DataTracker dataTracker;
 
     @Final
     @Shadow
-    private static TrackedData<EntityPose> POSE;
+    protected static TrackedData<EntityPose> POSE;
 
     @Inject(at = @At("HEAD"), method = "getPose()Lnet/minecraft/entity/EntityPose;", cancellable = true)
     public void getPose(CallbackInfoReturnable<EntityPose> info) {

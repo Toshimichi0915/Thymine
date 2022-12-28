@@ -25,7 +25,7 @@ abstract public class SliderWidgetMixin extends ClickableWidget {
     }
 
     /**
-     * @author hp20
+     * @author Toshimichi0915
      * @reason Fixes buttons ringing sound even when they were not clicked
      */
     @Overwrite
