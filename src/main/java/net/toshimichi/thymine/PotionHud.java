@@ -19,13 +19,22 @@ public class PotionHud extends DrawableHelper {
         float y = ThymineMod.getOptions().potionHudOptions.getY();
         int index = 0;
         for (StatusEffectInstance effect : client.player.getStatusEffects()) {
+
+            int seconds = effect.getDuration() / 20;
+            int minutes = seconds / 60;
+            if (minutes > 60) continue;
+            StringBuilder builder = new StringBuilder();
+
+            if (minutes > 0) {
+                builder.append(minutes % 60).append(":");
+            }
+            builder.append(seconds % 60);
+            String text = builder.toString();
+
             Sprite sprite = client.getStatusEffectSpriteManager().getSprite(effect.getEffectType());
             RenderSystem.setShaderTexture(0, sprite.getAtlas().getId());
             drawSprite(stack, (int) x, (int) y + (index * 25), getZOffset(), 18, 18, sprite);
 
-            int seconds = effect.getDuration() / 20;
-            int minutes = seconds / 60;
-            String text = String.format("%02d", minutes) + ':' + String.format("%02d", seconds % 60);
             renderer.drawWithShadow(stack, text, x + 21, y + 5 + (index * 25),
                     ThymineMod.getOptions().potionHudOptions.color);
             if (effect.getAmplifier() > 0) {
