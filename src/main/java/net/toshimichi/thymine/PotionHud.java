@@ -23,14 +23,8 @@ public class PotionHud extends DrawableHelper {
             int seconds = effect.getDuration() / 20;
             int minutes = seconds / 60;
             if (minutes > 60) continue;
-            StringBuilder builder = new StringBuilder();
 
-            if (minutes > 0) {
-                builder.append(minutes % 60).append(":");
-            }
-            builder.append(seconds % 60);
-            String text = builder.toString();
-
+            String text = String.format("%02d:%02d", minutes, seconds % 60);
             Sprite sprite = client.getStatusEffectSpriteManager().getSprite(effect.getEffectType());
             RenderSystem.setShaderTexture(0, sprite.getAtlas().getId());
             drawSprite(stack, (int) x, (int) y + (index * 25), getZOffset(), 18, 18, sprite);
