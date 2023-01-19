@@ -31,3 +31,7 @@ tasks.withType(JavaCompile).configureEach {
 jar {
     from "LICENSE"
 }
+
+remapJar {
+    archiveName = "${archivesBaseName}-${version}-mc${project.minecraft_version}.jar"
+}
