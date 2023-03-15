@@ -2,8 +2,8 @@ package net.toshimichi.thymine;
 
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
-import net.minecraft.client.gui.widget.ButtonListWidget;
 import net.minecraft.client.gui.widget.ButtonWidget;
+import net.minecraft.client.gui.widget.OptionListWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.SimpleOption;
 import net.minecraft.client.util.math.MatrixStack;
@@ -13,7 +13,7 @@ import net.toshimichi.thymine.options.ThymineOptions;
 
 public class ThymineOptionsScreen extends GameOptionsScreen {
 
-    private ButtonListWidget list;
+    private OptionListWidget list;
 
     private static ThymineOptions options() {
         return ThymineMod.getOptions();
@@ -44,7 +44,7 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
                         SimpleOption.DoubleSliderCallbacks.INSTANCE, options().lowFire, (v) -> options().lowFire = v),
         };
 
-        this.list = new ButtonListWidget(this.client, this.width, this.height, 32, this.height - 32, 25);
+        this.list = new OptionListWidget(this.client, this.width, this.height, 32, this.height - 32, 25);
         list.addAll(options);
 
         addSelectableChild(list);
@@ -72,9 +72,6 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
 
     @Override
     public void render(MatrixStack matrices, int mouseX, int mouseY, float delta) {
-        renderBackground(matrices);
-        list.render(matrices, mouseX, mouseY, delta);
-        drawCenteredText(matrices, this.textRenderer, this.title, this.width / 2, 5, 16777215);
-        super.render(matrices, mouseX, mouseY, delta);
+        this.render(matrices, this.list, mouseX, mouseY, delta);
     }
 }

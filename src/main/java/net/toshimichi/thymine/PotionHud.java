@@ -27,7 +27,7 @@ public class PotionHud extends DrawableHelper {
             String text = String.format("%02d:%02d", minutes, seconds % 60);
             Sprite sprite = client.getStatusEffectSpriteManager().getSprite(effect.getEffectType());
             RenderSystem.setShaderTexture(0, sprite.getAtlasId());
-            drawSprite(stack, (int) x, (int) y + (index * 25), getZOffset(), 18, 18, sprite);
+            drawSprite(stack, (int) x, (int) y + (index * 25), 0, 18, 18, sprite);
 
             renderer.drawWithShadow(stack, text, x + 21, y + 5 + (index * 25),
                     ThymineMod.getOptions().potionHudOptions.color);

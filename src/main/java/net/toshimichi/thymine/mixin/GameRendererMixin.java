@@ -13,10 +13,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(GameRenderer.class)
 abstract public class GameRendererMixin {
 
-    @Inject(at = @At("HEAD"), method = "bobViewWhenHurt(Lnet/minecraft/client/util/math/MatrixStack;F)V", cancellable = true)
-    public void bobViewWhenHurt(MatrixStack arg, float f, CallbackInfo info) {
-        if (ThymineMod.getOptions().noHurtBobbing)
+    @Inject(at = @At("HEAD"), method = "tiltViewWhenHurt(Lnet/minecraft/client/util/math/MatrixStack;F)V", cancellable = true)
+    public void tiltViewWhenHurt(MatrixStack arg, float f, CallbackInfo info) {
+        if (ThymineMod.getOptions().noHurtBobbing) {
             info.cancel();
+        }
     }
 
     @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/render/GameRenderer;bobView(Lnet/minecraft/client/util/math/MatrixStack;F)V"), method = "renderWorld")

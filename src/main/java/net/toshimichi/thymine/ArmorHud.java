@@ -30,8 +30,8 @@ public class ArmorHud extends DrawableHelper {
         for (ItemStack itemStack : armorItems) {
             int x = width / 2 + 12 + (index * 20);
             int y = height - 57;
-            itemRenderer.renderGuiItemIcon(itemStack, x, y);
-            itemRenderer.renderGuiItemOverlay(client.textRenderer, itemStack, x, y);
+            itemRenderer.renderGuiItemIcon(stack, itemStack, x, y);
+            itemRenderer.renderGuiItemOverlay(stack, client.textRenderer, itemStack, x, y);
             index++;
         }
         client.getProfiler().pop();
