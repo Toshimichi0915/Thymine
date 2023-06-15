@@ -8,7 +8,6 @@ import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.network.NetworkThreadUtils;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.s2c.play.EntityTrackerUpdateS2CPacket;
-import net.minecraft.network.packet.s2c.play.ResourcePackSendS2CPacket;
 import net.toshimichi.thymine.ThymineMod;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -39,10 +38,5 @@ public abstract class ClientPlayNetworkHandlerMixin implements ClientPlayPacketL
             }
             info.cancel();
         }
-    }
-
-    @Inject(at = @At("HEAD"), method="onResourcePackSend(Lnet/minecraft/network/packet/s2c/play/ResourcePackSendS2CPacket;)V", cancellable = true)
-    public void onResourcePackSend(ResourcePackSendS2CPacket packet, CallbackInfo ci) {
-
     }
 }
