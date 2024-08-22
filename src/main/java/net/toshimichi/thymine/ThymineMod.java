@@ -26,7 +26,7 @@ public class ThymineMod implements ModInitializer {
     public void onInitialize() {
         sprintKeyBinding = new KeyBinding("thymine.options.toggleSprint", GLFW.GLFW_KEY_R, "thymine");
         KeyBindingHelper.registerKeyBinding(sprintKeyBinding);
-        ClientTickEvents.START_CLIENT_TICK.register(new SprintStartTick());
+        ClientTickEvents.START_CLIENT_TICK.register(new ToggleSprintTick());
     }
 
     public static ThymineOptions getOptions() {
