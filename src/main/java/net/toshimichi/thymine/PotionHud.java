@@ -18,6 +18,7 @@ public class PotionHud {
         float y = ThymineMod.getOptions().potionHudOptions.getY();
         int index = 0;
         for (StatusEffectInstance effect : client.player.getStatusEffects()) {
+            if (effect.isInfinite()) continue;
 
             int seconds = effect.getDuration() / 20;
             int minutes = seconds / 60;
