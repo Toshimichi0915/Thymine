@@ -28,6 +28,7 @@ public class ArmorHud {
             int x = width / 2 + 12 + (index * 20);
             int y = height - 57;
             context.drawItem(itemStack, x, y);
+            context.drawItemInSlot(client.textRenderer, itemStack, x, y);
             index++;
         }
         client.getProfiler().pop();
