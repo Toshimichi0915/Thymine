@@ -23,7 +23,8 @@ public abstract class EntityMixin {
     private EntityType<?> type;
 
     @Final
-    @Shadow protected DataTracker dataTracker;
+    @Shadow
+    protected DataTracker dataTracker;
 
     @Final
     @Shadow

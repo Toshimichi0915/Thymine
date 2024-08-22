@@ -6,7 +6,6 @@ public class ThymineOptions {
     public boolean shiftFix;
     public boolean toggleSprint;
     public boolean sprint;
-    public boolean noHurtBobbing;
     public boolean ignoreCooldown;
     public boolean softSneak;
     public boolean forceIcon;
@@ -26,7 +25,6 @@ public class ThymineOptions {
         shiftFix = true;
         toggleSprint = false;
         sprint = false;
-        noHurtBobbing = true;
         ignoreCooldown = true;
         softSneak = true;
         forceIcon = true;

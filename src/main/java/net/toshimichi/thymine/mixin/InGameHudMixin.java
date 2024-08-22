@@ -2,6 +2,7 @@ package net.toshimichi.thymine.mixin;
 
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
+import net.minecraft.client.render.RenderTickCounter;
 import net.toshimichi.thymine.ArmorHud;
 import net.toshimichi.thymine.PotionHud;
 import net.toshimichi.thymine.ThymineMod;
@@ -19,7 +20,7 @@ public class InGameHudMixin {
     private final ArmorHud armorHud = new ArmorHud();
 
     @Inject(at = @At("TAIL"), method = "render")
-    public void render(DrawContext context, float tickDelta, CallbackInfo ci) {
+    public void render(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
         if (!ThymineMod.getOptions().toggleSprintHud.isHidden() && ThymineMod.getOptions().toggleSprint) {
             toggleSprintHud.render(context);
         }
@@ -32,7 +33,7 @@ public class InGameHudMixin {
     }
 
     @Inject(at = @At("HEAD"), method = "renderStatusEffectOverlay", cancellable = true)
-    public void renderStatusEffects(DrawContext context, CallbackInfo ci) {
+    public void renderStatusEffects(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
         if (ThymineMod.getOptions().noStatusOverlay) {
             ci.cancel();
         }

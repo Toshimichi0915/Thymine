@@ -19,16 +19,10 @@ public abstract class PlayerEntityMixin extends LivingEntity {
         super(entityType, world);
     }
 
-    /**
-     * @author Toshimichi0915
-     * @reason to change eye height when sneaking
-     */
-    @Inject(at = @At("HEAD"), method = "getActiveEyeHeight(Lnet/minecraft/entity/EntityPose;Lnet/minecraft/entity/EntityDimensions;)F", cancellable = true)
-    public void getActiveEyeHeight(EntityPose pose, EntityDimensions dimensions, CallbackInfoReturnable<Float> info) {
-        if (ThymineMod.getOptions().softSneak &&
-                pose == EntityPose.CROUCHING) {
-            info.setReturnValue(dimensions.height * 0.93F);
-            info.cancel();
+    @Inject(at = @At("RETURN"), method = "getBaseDimensions", cancellable = true)
+    public void getBaseDimensions(EntityPose pose, CallbackInfoReturnable<EntityDimensions> cir) {
+        if (ThymineMod.getOptions().softSneak && pose == EntityPose.CROUCHING) {
+            cir.setReturnValue(cir.getReturnValue().withEyeHeight(1.4F));
         }
     }
 }

@@ -1,19 +1,13 @@
 package net.toshimichi.thymine;
 
-import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.GameOptionsScreen;
-import net.minecraft.client.gui.widget.ButtonWidget;
-import net.minecraft.client.gui.widget.OptionListWidget;
 import net.minecraft.client.option.GameOptions;
 import net.minecraft.client.option.SimpleOption;
-import net.minecraft.screen.ScreenTexts;
 import net.minecraft.text.Text;
 import net.toshimichi.thymine.options.ThymineOptions;
 
 public class ThymineOptionsScreen extends GameOptionsScreen {
-
-    private OptionListWidget list;
 
     private static ThymineOptions options() {
         return ThymineMod.getOptions();
@@ -24,12 +18,11 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
     }
 
     @Override
-    protected void init() {
+    protected void addOptions() {
         SimpleOption<?>[] options = {
                 SimpleOption.ofBoolean("thymine.options.fullBright", options().fullBright, t -> options().fullBright = t),
                 SimpleOption.ofBoolean("thymine.options.fastSneak", options().fastSneak, t -> options().fastSneak = t),
                 SimpleOption.ofBoolean("thymine.options.toggleSprint", options().toggleSprint, t -> options().toggleSprint = t),
-                SimpleOption.ofBoolean("thymine.options.noHurtBobbing", options().noHurtBobbing, t -> options().noHurtBobbing = t),
                 SimpleOption.ofBoolean("thymine.options.shiftFix", options().shiftFix, t -> options().shiftFix = t),
                 SimpleOption.ofBoolean("thymine.options.ignoreCooldown", options().ignoreCooldown, t -> options().ignoreCooldown = t),
                 SimpleOption.ofBoolean("thymine.options.softSneak", options().softSneak, t -> options().softSneak = t),
@@ -44,13 +37,7 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
                         SimpleOption.DoubleSliderCallbacks.INSTANCE, options().lowFire, (v) -> options().lowFire = v),
         };
 
-        this.list = new OptionListWidget(this.client, this.width, this.height, 32, this.height - 32, 25);
-        list.addAll(options);
-
-        addSelectableChild(list);
-        addDrawableChild(ButtonWidget.builder(ScreenTexts.DONE, (buttonWidget) -> close())
-                .dimensions(this.width / 2 - 100, this.height - 27, 200, 20)
-                .build());
+        this.body.addAll(options);
     }
 
     @Override
@@ -61,17 +48,5 @@ public class ThymineOptionsScreen extends GameOptionsScreen {
 
     private static Text getPercentValueText(Text prefix, double value) {
         return Text.translatable("options.percent_value", prefix, (int) (value * 100.0));
-    }
-
-    @Override
-    public boolean mouseReleased(double mouseX, double mouseY, int button) {
-        if (super.mouseReleased(mouseX, mouseY, button)) return true;
-        if (this.list.mouseReleased(mouseX, mouseY, button)) return true;
-        return false;
-    }
-
-    @Override
-    public void render(DrawContext context, int mouseX, int mouseY, float delta) {
-        this.render(context, this.list, mouseX, mouseY, delta);
     }
 }

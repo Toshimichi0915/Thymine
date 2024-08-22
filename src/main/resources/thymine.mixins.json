@@ -2,27 +2,25 @@
   "required": true,
   "minVersion": "0.8",
   "package": "net.toshimichi.thymine.mixin",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_21",
   "client": [
     "CameraMixin",
+    "ClientCommonNetworkHandlerAccessor",
     "ClientPlayerInteractionManagerAccessor",
     "ClientPlayNetworkHandlerMixin",
     "EntityMixin",
+    "EntityRenderDispatcherMixin",
     "GameRendererMixin",
     "HeldItemRendererMixin",
     "InGameHudMixin",
     "InGameOverlayRendererMixin",
-    "LivingEntityMixin",
+    "LightmapTextureManagerMixin",
+    "MinecraftClientMixin",
     "OptionsScreenMixin",
     "PlayerEntityMixin",
-    "RenderSystemMixin",
-    "SliderWidgetMixin",
     "StatusEffectInstanceMixin"
   ],
   "injectors": {
     "defaultRequire": 0
-  },
-  "mixins": [
-    "EntityRenderDispatcherMixin"
-  ]
+  }
 }
