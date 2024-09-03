@@ -18,8 +18,8 @@ public class KeyBindingMixin {
 
     @Inject(at = @At("HEAD"), method = "isPressed", cancellable = true)
     public void isPressed(CallbackInfoReturnable<Boolean> cir) {
-        if (ThymineMod.getOptions().toggleSprint && translationKey.equals("key.sprint")) {
-            cir.setReturnValue(ThymineMod.getOptions().sprint);
+        if (ThymineMod.getOptions().toggleSprint && ThymineMod.getOptions().sprint && translationKey.equals("key.sprint")) {
+            cir.setReturnValue(true);
         }
     }
 }
