@@ -3,6 +3,7 @@ package net.toshimichi.thymine;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.profiler.Profilers;
 import net.minecraft.world.GameMode;
 import net.toshimichi.thymine.mixin.ClientPlayerInteractionManagerAccessor;
 
@@ -16,7 +17,7 @@ public class ArmorHud {
         GameMode current = ((ClientPlayerInteractionManagerAccessor) client.interactionManager).getGameMode();
         if (current != GameMode.SURVIVAL && current != GameMode.ADVENTURE) return;
 
-        client.getProfiler().push("armorHud");
+        Profilers.get().push("armorHud");
 
         int index = 0;
         ArrayList<ItemStack> armorItems = new ArrayList<>();
@@ -28,9 +29,9 @@ public class ArmorHud {
             int x = width / 2 + 12 + (index * 20);
             int y = height - 57;
             context.drawItem(itemStack, x, y);
-            context.drawItemInSlot(client.textRenderer, itemStack, x, y);
+            context.drawStackOverlay(client.textRenderer, itemStack, x, y);
             index++;
         }
-        client.getProfiler().pop();
+        Profilers.get().pop();
     }
 }

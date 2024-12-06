@@ -4,12 +4,13 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.text.Text;
+import net.minecraft.util.profiler.Profilers;
 
 public class ToggleSprintHud {
 
     public void render(DrawContext context) {
         MinecraftClient client = MinecraftClient.getInstance();
-        client.getProfiler().push("toggleSprint");
+        Profilers.get().push("toggleSprint");
         TextRenderer renderer = client.textRenderer;
 
         int x = (int) ThymineMod.getOptions().toggleSprintHud.getX();
@@ -22,6 +23,6 @@ public class ToggleSprintHud {
             String toggleSprintDisabled = Text.translatable("thymine.messages.toggleSprint.disabled").getString();
             context.drawTextWithShadow(renderer, toggleSprintDisabled, x, y, color);
         }
-        client.getProfiler().pop();
+        Profilers.get().pop();
     }
 }

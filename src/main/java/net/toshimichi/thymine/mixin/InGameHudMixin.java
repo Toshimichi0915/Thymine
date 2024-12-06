@@ -8,6 +8,7 @@ import net.toshimichi.thymine.PotionHud;
 import net.toshimichi.thymine.ThymineMod;
 import net.toshimichi.thymine.ToggleSprintHud;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -15,8 +16,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(InGameHud.class)
 public class InGameHudMixin {
 
+    @Unique
     private final ToggleSprintHud toggleSprintHud = new ToggleSprintHud();
+    @Unique
     private final PotionHud potionHud = new PotionHud();
+    @Unique
     private final ArmorHud armorHud = new ArmorHud();
 
     @Inject(at = @At("TAIL"), method = "render")
