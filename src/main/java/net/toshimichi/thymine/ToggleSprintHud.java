@@ -13,8 +13,8 @@ public class ToggleSprintHud {
         Profilers.get().push("toggleSprint");
         TextRenderer renderer = client.textRenderer;
 
-        int x = (int) ThymineMod.getOptions().toggleSprintHud.getX();
-        int y = (int) ThymineMod.getOptions().toggleSprintHud.getY();
+        int x = ThymineMod.getOptions().toggleSprintHud.getX();
+        int y = ThymineMod.getOptions().toggleSprintHud.getY();
         int color = ThymineMod.getOptions().toggleSprintHud.color;
         if (ThymineMod.getOptions().sprint) {
             String toggleSprintEnabled = Text.translatable("thymine.messages.toggleSprint.enabled").getString();

@@ -39,11 +39,11 @@ public class ThymineOptions {
         toggleSprintHud.x = -200;
         toggleSprintHud.y = -15;
         toggleSprintHud.position = Position.CENTER_BOTTOM;
-        toggleSprintHud.color = 0xE0E0E0;
+        toggleSprintHud.color = -1;
         potionHudOptions = new PotionHudOptions();
         potionHudOptions.x = 10;
         potionHudOptions.y = 10;
         potionHudOptions.position = Position.LEFT_TOP;
-        potionHudOptions.color = 0xE0E0E0;
+        potionHudOptions.color = -1;
     }
 }

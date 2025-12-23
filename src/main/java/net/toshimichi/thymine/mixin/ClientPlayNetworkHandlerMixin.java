@@ -25,7 +25,7 @@ public abstract class ClientPlayNetworkHandlerMixin implements ClientPlayPacketL
     public void onEntityTrackerUpdate(EntityTrackerUpdateS2CPacket packet, CallbackInfo info) {
         if (ThymineMod.getOptions().shiftFix) {
             MinecraftClient client = ((ClientCommonNetworkHandlerAccessor) this).getClient();
-            NetworkThreadUtils.forceMainThread(packet, this, client);
+            NetworkThreadUtils.forceMainThread(packet, this, client.getPacketApplyBatcher());
             Entity entity = this.world.getEntityById(packet.id());
             if (entity != null && packet.trackedValues() != null) {
                 if (entity.equals(client.player)) {

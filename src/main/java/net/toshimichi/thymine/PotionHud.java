@@ -2,11 +2,10 @@ package net.toshimichi.thymine;
 
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.font.TextRenderer;
+import net.minecraft.client.gl.RenderPipelines;
 import net.minecraft.client.gui.DrawContext;
-import net.minecraft.client.render.RenderLayer;
-import net.minecraft.client.texture.Sprite;
+import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.util.math.ColorHelper;
 import net.minecraft.util.profiler.Profilers;
 
 public class PotionHud {
@@ -16,8 +15,8 @@ public class PotionHud {
         Profilers.get().push("potionHud");
         TextRenderer renderer = client.textRenderer;
 
-        float x = ThymineMod.getOptions().potionHudOptions.getX();
-        float y = ThymineMod.getOptions().potionHudOptions.getY();
+        int x = ThymineMod.getOptions().potionHudOptions.getX();
+        int y = ThymineMod.getOptions().potionHudOptions.getY();
         int index = 0;
         for (StatusEffectInstance effect : client.player.getStatusEffects()) {
             if (effect.isInfinite()) continue;
@@ -27,12 +26,11 @@ public class PotionHud {
             if (minutes > 60) continue;
 
             String text = String.format("%02d:%02d", minutes, seconds % 60);
-            Sprite sprite = client.getStatusEffectSpriteManager().getSprite(effect.getEffectType());
-            context.drawSpriteStretched(RenderLayer::getGuiTextured, sprite, (int) x, (int) y + (index * 25), 18, 18, ColorHelper.getWhite(1));
-            context.drawTextWithShadow(renderer, text, (int) (x + 21), (int) (y + 5 + (index * 25)),
+            context.drawGuiTexture(RenderPipelines.GUI_TEXTURED, InGameHud.getEffectTexture(effect.getEffectType()), x + 7, y + 7 + (index * 25), 18, 18);
+            context.drawTextWithShadow(renderer, text, x + 28, y + 12 + (index * 25),
                     ThymineMod.getOptions().potionHudOptions.color);
             if (effect.getAmplifier() > 0) {
-                context.drawTextWithShadow(renderer, Integer.toString(effect.getAmplifier() + 1), (int) (x + 13), (int) (y + 11 + (index * 25)),
+                context.drawTextWithShadow(renderer, Integer.toString(effect.getAmplifier() + 1), x + 20, y + 18 + (index * 25),
                         ThymineMod.getOptions().potionHudOptions.color);
             }
             index++;

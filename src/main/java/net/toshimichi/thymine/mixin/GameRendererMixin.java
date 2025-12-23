@@ -12,6 +12,8 @@ abstract public class GameRendererMixin {
 
     @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/SimpleOption;getValue()Ljava/lang/Object;", ordinal = 0), method = "renderWorld", require = 0)
     public Object bobView(SimpleOption<Boolean> instance) {
-        return !ThymineMod.getOptions().noScreenBobbing;
+        if (ThymineMod.getOptions().noScreenBobbing) return false;
+
+        return instance.getValue();
     }
 }

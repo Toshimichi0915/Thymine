@@ -23,7 +23,7 @@ public class InGameHudMixin {
     @Unique
     private final ArmorHud armorHud = new ArmorHud();
 
-    @Inject(at = @At("TAIL"), method = "render")
+    @Inject(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/gui/hud/InGameHud;renderDemoTimer(Lnet/minecraft/client/gui/DrawContext;Lnet/minecraft/client/render/RenderTickCounter;)V"), method = "render")
     public void render(DrawContext context, RenderTickCounter tickCounter, CallbackInfo ci) {
         if (!ThymineMod.getOptions().toggleSprintHud.isHidden() && ThymineMod.getOptions().toggleSprint) {
             toggleSprintHud.render(context);

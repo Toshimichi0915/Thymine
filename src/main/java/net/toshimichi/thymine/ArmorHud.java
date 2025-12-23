@@ -8,7 +8,6 @@ import net.minecraft.world.GameMode;
 import net.toshimichi.thymine.mixin.ClientPlayerInteractionManagerAccessor;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class ArmorHud {
 
@@ -21,8 +20,10 @@ public class ArmorHud {
 
         int index = 0;
         ArrayList<ItemStack> armorItems = new ArrayList<>();
-        client.player.getArmorItems().forEach(armorItems::add);
-        Collections.reverse(armorItems);
+        armorItems.add(client.player.getInventory().getStack(39));
+        armorItems.add(client.player.getInventory().getStack(38));
+        armorItems.add(client.player.getInventory().getStack(37));
+        armorItems.add(client.player.getInventory().getStack(36));
         int width = client.getWindow().getScaledWidth();
         int height = client.getWindow().getScaledHeight();
         for (ItemStack itemStack : armorItems) {

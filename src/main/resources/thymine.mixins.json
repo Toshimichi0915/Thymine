@@ -9,7 +9,6 @@
     "ClientPlayerInteractionManagerAccessor",
     "ClientPlayNetworkHandlerMixin",
     "EntityMixin",
-    "EntityRenderDispatcherMixin",
     "GameRendererMixin",
     "HeldItemRendererMixin",
     "InGameHudMixin",
@@ -19,7 +18,8 @@
     "MinecraftClientMixin",
     "OptionsScreenMixin",
     "PlayerEntityMixin",
-    "StatusEffectInstanceMixin"
+    "StatusEffectInstanceMixin",
+    "WorldRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 0

@@ -1,16 +1,16 @@
 package net.toshimichi.thymine.options;
 
 public class HudOptions {
-    public float x;
-    public float y;
+    public int x;
+    public int y;
     public Position position;
     public boolean hidden;
 
-    public float getX() {
+    public int getX() {
         return x + position.getX();
     }
 
-    public float getY() {
+    public int getY() {
         return y + position.getY();
     }
 

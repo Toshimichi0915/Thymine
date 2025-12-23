@@ -6,6 +6,7 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.keybinding.v1.KeyBindingHelper;
 import net.minecraft.client.option.KeyBinding;
+import net.minecraft.util.Identifier;
 import net.toshimichi.thymine.options.ThymineOptions;
 import org.apache.commons.io.FileUtils;
 import org.lwjgl.glfw.GLFW;
@@ -24,7 +25,8 @@ public class ThymineMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        sprintKeyBinding = new KeyBinding("thymine.options.toggleSprint", GLFW.GLFW_KEY_R, "thymine");
+        KeyBinding.Category category = KeyBinding.Category.create(Identifier.of("thymine", "options"));
+        sprintKeyBinding = new KeyBinding("thymine.options.toggleSprint", GLFW.GLFW_KEY_R, category);
         KeyBindingHelper.registerKeyBinding(sprintKeyBinding);
         ClientTickEvents.START_CLIENT_TICK.register(new ToggleSprintTick());
     }
