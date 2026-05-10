@@ -9,7 +9,6 @@ import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.client.render.WorldRenderer;
 import net.minecraft.client.util.ObjectAllocator;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.debug.gizmo.GizmoDrawing;
 import net.toshimichi.thymine.ThymineMod;

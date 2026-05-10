@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 @Mixin(LightmapTextureManager.class)
 public class LightmapTextureManagerMixin {
 
-    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/SimpleOption;getValue()Ljava/lang/Object;", ordinal = 1), method = "update", require = 0)
+    @Redirect(at = @At(value = "INVOKE", target = "Lnet/minecraft/client/option/SimpleOption;getValue()Ljava/lang/Object;", ordinal = 2), method = "update", require = 0)
     public Object update(SimpleOption<Double> instance) {
         if (ThymineMod.getOptions().fullBright) {
             return 1000D;
